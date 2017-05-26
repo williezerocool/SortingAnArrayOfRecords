@@ -50,29 +50,14 @@ public class StoringDataInAFile {
             }
         }
 
-        //trying to sort my array here 
-        int temp =0;
-        for(int i=0; i<5; i++){
         
-            for(int j=0; j<5; j++){
-            
-                if(newCar[i].year < newCar[j].year){
-                  
-                    newCar[temp].make = newCar[i].make;
-                    newCar[temp].model = newCar[i].model;
-                    newCar[temp].year = newCar[i].year;
-                    newCar[temp].license = newCar[i].license;
-                   
-                    newCar[i].make = newCar[j].make;
-                    newCar[i].model = newCar[j].model;
-                    newCar[i].year = newCar[j].year;
-                    newCar[i].license = newCar[j].license;
-                    
-                    newCar[j].make = newCar[temp].make;
-                    newCar[j].model = newCar[temp].model;
-                    newCar[j].year = newCar[temp].year;
-                    newCar[j].license = newCar[temp].license;
-                    
+      int temp = 0;
+        for (car newCar1 : newCar) {
+            for (car newCar2 : newCar) {
+                if (newCar1.year < newCar2.year) {
+                    temp = newCar1.year;
+                    newCar1.year = newCar2.year;
+                    newCar2.year = temp;
                 }
             }
         }
